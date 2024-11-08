@@ -9,6 +9,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { useAuth } from "@/components/auth/hooks/useAuth";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AuthProvider } from "@/components/auth/AuthProvider";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
@@ -18,13 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Provider store={store}>
-          <AuthProvider>
-            <main>{children}</main>
-          </AuthProvider>
+        <QueryClientProvider client={queryClient}>
+          <Provider store={store}>
+            <AuthProvider>
+              <main>{children}</main>
+            </AuthProvider>
 
-          <Toaster />
-        </Provider>
+            <Toaster />
+          </Provider>
+        </QueryClientProvider>
       </body>
     </html>
   );

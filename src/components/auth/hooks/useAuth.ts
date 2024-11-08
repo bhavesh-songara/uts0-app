@@ -22,8 +22,10 @@ export const useAuth = (props?: { initializeAuth?: boolean }) => {
   const handleInitializeAuth = async () => {
     const { data, error } = await AuthService.me();
 
-    if (data) {
-      dispatch(login(data));
+    console.log({ data, error });
+
+    if (data?.isAuthenticated) {
+      dispatch(login(data?.user));
     }
 
     setLoading(false);

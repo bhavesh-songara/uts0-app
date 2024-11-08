@@ -3,7 +3,7 @@
 import withAuth from "@/components/hoc/withAuth";
 
 function Component() {
-  return <div>Dashboard</div>;
+  return <>Dashboard</>;
 }
 
 export default withAuth(Component);
