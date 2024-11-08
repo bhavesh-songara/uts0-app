@@ -7,40 +7,40 @@ import Link from "next/link";
 
 export default function Component() {
   const [theme, setTheme] = useState("dark");
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  // const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme]);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setTimeLeft(calculateTimeLeft());
+  //   }, 1000);
 
-    return () => clearInterval(timer);
-  }, []);
+  //   return () => clearInterval(timer);
+  // }, []);
 
-  function calculateTimeLeft() {
-    const difference = +new Date("2024-11-07") - +new Date();
-    let timeLeft: {
-      days?: number;
-      hours?: number;
-      minutes?: number;
-      seconds?: number;
-    } = {};
+  // function calculateTimeLeft() {
+  //   const difference = +new Date("2024-11-07") - +new Date();
+  //   let timeLeft: {
+  //     days?: number;
+  //     hours?: number;
+  //     minutes?: number;
+  //     seconds?: number;
+  //   } = {};
 
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
-      };
-    }
+  //   if (difference > 0) {
+  //     timeLeft = {
+  //       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+  //       hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+  //       minutes: Math.floor((difference / 1000 / 60) % 60),
+  //       seconds: Math.floor((difference / 1000) % 60),
+  //     };
+  //   }
 
-    return timeLeft;
-  }
+  //   return timeLeft;
+  // }
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -73,12 +73,12 @@ export default function Component() {
             uts0 helps you turn unstructured data into structured data. Powerful
             and easy to use.
           </p>
-          <div className="text-2xl md:text-4xl font-mono mb-8 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg inline-block">
+          {/* <div className="text-2xl md:text-4xl font-mono mb-8 bg-gray-100 dark:bg-gray-800 p-4 rounded-lg inline-block">
             {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m{" "}
             {timeLeft.seconds}s
-          </div>
+          </div> */}
           <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">
-            Launching November 7th, 2024
+            Launching soon.
           </p>
         </div>
       </main>
