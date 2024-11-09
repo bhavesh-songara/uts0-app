@@ -23,9 +23,9 @@ export default function Component() {
               <Link href={`/dashboard`}>Go to Dashboard</Link>
             </Button>
           ) : (
-            <Button>
-              <a href={AuthService.LOGIN}>Login</a>
-            </Button>
+            <a href={AuthService.LOGIN}>
+              <Button>Login</Button>
+            </a>
           )}
         </nav>
       </header>

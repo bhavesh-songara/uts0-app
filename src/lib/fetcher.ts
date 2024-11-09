@@ -2,7 +2,10 @@ import axios, { AxiosRequestConfig } from "axios";
 
 const fetcher = async (payload: AxiosRequestConfig) => {
   try {
-    const response = await axios(payload);
+    const response = await axios({
+      ...payload,
+      withCredentials: true,
+    });
     return {
       data: response.data,
       error: null,

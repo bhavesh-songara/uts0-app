@@ -27,12 +27,16 @@ export const NotAuthenticated = () => {
           </div>
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
-          <Button className="w-full" variant="default">
-            <a href={AuthService.LOGIN}>Log In</a>
-          </Button>
-          <Button className="w-full" variant="outline">
-            <a href={AuthService.LOGIN}>Sign Up</a>
-          </Button>
+          <a href={AuthService.LOGIN}>
+            <Button className="w-full" variant="default">
+              Log In
+            </Button>
+          </a>{" "}
+          <a href={AuthService.LOGIN}>
+            <Button className="w-full" variant="outline">
+              Sign Up
+            </Button>
+          </a>
         </CardFooter>
       </Card>
     </div>
