@@ -3,7 +3,7 @@ import fetcher from "@/lib/fetcher";
 
 export class AuthService {
   static BASE = `${config.serviceUrl}/api/auth`;
-  static LOGIN = `${this.BASE}/login`;
+  static GOOGLE_LOGIN = `${this.BASE}/google`;
   static LOGOUT = `${this.BASE}/logout`;
   static ME = `${this.BASE}/me`;
 

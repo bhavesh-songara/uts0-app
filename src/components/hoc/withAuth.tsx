@@ -7,8 +7,6 @@ const withAuth = (Component: React.FunctionComponent) => {
   const ComponentWithAuth = (props: any) => {
     const { isAuthenticated } = useAppSelector((state) => state.auth);
 
-    console.log({ isAuthenticated });
-
     if (!isAuthenticated) {
       return <NotAuthenticated />;
     }

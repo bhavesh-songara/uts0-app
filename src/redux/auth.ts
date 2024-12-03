@@ -3,7 +3,11 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface AuthState {
   isAuthenticated: boolean;
-  user: any;
+  user: {
+    _id?: string;
+    name?: string;
+    email?: string;
+  };
 }
 
 const initialState: AuthState = {

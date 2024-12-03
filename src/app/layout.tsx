@@ -6,12 +6,17 @@ import { store } from "@/redux/store";
 import "./globals.css";
 
 import { Toaster } from "@/components/ui/toaster";
-import { useAuth } from "@/components/auth/hooks/useAuth";
-import { Skeleton } from "@/components/ui/skeleton";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { RootDialog } from "@/components/dialog/RootDialog";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+    },
+  },
+});
 
 export default function RootLayout({
   children,
@@ -27,6 +32,7 @@ export default function RootLayout({
               <main>{children}</main>
             </AuthProvider>
 
+            <RootDialog />
             <Toaster />
           </Provider>
         </QueryClientProvider>

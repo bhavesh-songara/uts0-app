@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { AuthService } from "@/services/AuthService";
+import Link from "next/link";
 
 export const NotAuthenticated = () => {
   return (
@@ -27,16 +28,16 @@ export const NotAuthenticated = () => {
           </div>
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
-          <a href={AuthService.LOGIN}>
+          <Link href={"/auth/login"}>
             <Button className="w-full" variant="default">
               Log In
             </Button>
-          </a>{" "}
-          <a href={AuthService.LOGIN}>
+          </Link>{" "}
+          <Link href={"/auth/login"}>
             <Button className="w-full" variant="outline">
               Sign Up
             </Button>
-          </a>
+          </Link>
         </CardFooter>
       </Card>
     </div>

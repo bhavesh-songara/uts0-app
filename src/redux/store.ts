@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./auth";
 import drawerReducer from "./drawer";
-import modalReducer from "./modal";
+import dialogReducer from "./dialog";
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    modal: modalReducer,
+    dialog: dialogReducer,
     drawer: drawerReducer,
   },
   middleware: (getDefaultMiddleware) =>

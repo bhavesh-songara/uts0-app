@@ -22,9 +22,7 @@ export const useAuth = (props?: { initializeAuth?: boolean }) => {
   const handleInitializeAuth = async () => {
     const { data, error } = await AuthService.me();
 
-    console.log({ data, error });
-
-    if (data?.isAuthenticated) {
+    if (data?.user) {
       dispatch(login(data?.user));
     }
 
@@ -46,8 +44,10 @@ export const useAuth = (props?: { initializeAuth?: boolean }) => {
       });
 
       dispatch(logout());
+
+      window.location.href = "/";
     }
   };
 
-  return { handleLogout, loginUrl: AuthService.LOGIN, loading };
+  return { handleLogout, loading };
 };

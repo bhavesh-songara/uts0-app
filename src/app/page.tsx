@@ -19,13 +19,13 @@ export default function Component() {
         <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
           <ThemeButton />
           {isAuthenticated ? (
-            <Button>
-              <Link href={`/dashboard`}>Go to Dashboard</Link>
-            </Button>
+            <Link href={`/dashboard`}>
+              <Button>Go to Dashboard</Button>
+            </Link>
           ) : (
-            <a href={AuthService.LOGIN}>
+            <Link href={"/auth/login"}>
               <Button>Login</Button>
-            </a>
+            </Link>
           )}
         </nav>
       </header>
@@ -35,8 +35,8 @@ export default function Component() {
             Transforming Data Seamlessly
           </h1>
           <p className="mx-auto max-w-[700px] text-gray-600 dark:text-gray-300 md:text-xl mb-8">
-            uts0 helps you turn unstructured data into structured data. Powerful
-            and easy to use.
+            uts0 helps you turn unstructured data into structured. Powerful and
+            easy to use.
           </p>
         </div>
       </main>
